@@ -1,0 +1,28 @@
+--Create a clothing store database
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER, collection TEXT);
+INSERT INTO clothing VALUES (1, "T-Shirt", 4.50, 10, "Summer");
+INSERT INTO clothing VALUES (2, "Shorts", 7.50, 25, "Summer");
+INSERT INTO clothing VALUES (3, "Skirt", 7.00, 22, "Summer");
+INSERT INTO clothing VALUES (4, "Tank Top", 3.00, 15, "Summer");
+INSERT INTO clothing VALUES (5, "Crop Top", 5.00, 9, "Spring");
+INSERT INTO clothing VALUES (6, "Midi Dress", 22.00, 16, "Spring");
+INSERT INTO clothing VALUES (7, "Sunglasses", 4.00, 8, "Spring");
+INSERT INTO clothing VALUES (8, "Scarf", 7.50, 30, "Winter");
+INSERT INTO clothing VALUES (9, "Coat", 30.00, 14, "Winter");
+INSERT INTO clothing VALUES (10, "Gloves", 5.00, 35, "Winter");
+INSERT INTO clothing VALUES (11, "Sweater", 12.50, 60, "Fall");
+INSERT INTO clothing VALUES (12, "Boots", 45.99, 22, "Fall");
+INSERT INTO clothing VALUES (13, "Beanie", 2.99, 14, "Fall");
+INSERT INTO clothing VALUES (14, "Cardigan", 14.99, 29, "Spring");
+INSERT INTO clothing VALUES (15, "Bikini", 9.99, 16, "Summer");
+
+--Display the database ordered by price
+SELECT item FROM clothing ORDER BY price;
+
+--What is the total quantity of items sold at the clothing store?
+SELECT SUM(quantity) FROM clothing;
+
+--What are the top 5 expensive items at the store?
+SELECT item FROM clothing ORDER BY price desc LIMIT 5;
+
