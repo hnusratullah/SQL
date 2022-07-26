@@ -35,14 +35,19 @@ avg(popularity)
 ,avg(danceability)
 ,avg(energy)
 FROM BIT_DB.spotifydata
-GROUP BY artist_name
+GROUP BY artist_name;
 
-#Then I determined the Top 10 songs by Popularity
+#Then I wanted to find the Top 10 songs by Popularity
 SELECT track_name, artist_name, popularity
 FROM BIT_DB.Spotifydata
 ORDER BY popularity DESC
 LIMIT 10;
 
 
-#Then I wanted to know how many artists were on the Top 50 more than twice
+#Then I wanted to determine which artists had more than 2 songs on the Top 50 Chart
+SELECT  artist_name, count(artist_name) AS Songs
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+HAVING count(artist_name)>2
+ORDER BY Songs DESC;
 
